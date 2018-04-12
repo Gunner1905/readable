@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 export default () => {
   return (
     <div>
-		<img src={PageNotFound} style={{width: 400, height: 400, display: 'block', margin: 'auto', position: 'relative' }} />
+	<img src={PageNotFound} style={{width: 400, height: 400, display: 'block', margin: 'auto', position: 'relative' }} alt="Page Not Found" />
 
-		<Link to="/">Return to Home Page </Link>
+	<Link to="/">Return to Home Page </Link>
 
     </div>
   )
