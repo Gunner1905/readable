@@ -7,19 +7,19 @@ const headers = {
 }
 
 export async function getAllCategories() {
-  const res = await axios.get(`/api/categories`, { headers })
+  const res = await axios.get(`localhost:3001/api/categories`, { headers })
   return res.data.categories
 }
 
 export async function getPostsByCategory(category) {
-  const res = await axios.get(`/api/${category}/posts`, { headers })
+  const res = await axios.get(`localhost:3001/api/${category}/posts`, { headers })
   return res.data
 }
 
 export async function addPost({ category, title, body, author }) {
   const id = uuidV1()
   const timestamp = Date.now()
-  const res = await axios.post(`/api/posts`, {
+  const res = await axios.post(`localhost:3001/api/posts`, {
     id, timestamp, title, body, author, category
   }, { headers })
 
@@ -27,19 +27,19 @@ export async function addPost({ category, title, body, author }) {
 }
 
 export async function deletePost(id) {
-  const res = await axios.delete(`/api/posts/${id}`, { headers })
+  const res = await axios.delete(`localhost:3001/api/posts/${id}`, { headers })
 
   return res.data
 }
 
 export async function getPostById(id) {
-  const res = await axios.get(`/api/posts/${id}`, { headers })
+  const res = await axios.get(`localhost:3001/api/posts/${id}`, { headers })
 
   return res.data
 }
 
 export async function editPostById({ id, title, body }) {
-  const res = await axios.put(`/api/posts/${id}`, {
+  const res = await axios.put(`localhost:3001/api/posts/${id}`, {
     title, body
   }, { headers })
 
@@ -47,7 +47,7 @@ export async function editPostById({ id, title, body }) {
 }
 
 export async function upVotePost(id) {
-  const res = await axios.post(`/api/posts/${id}`, {
+  const res = await axios.post(`localhost:3001/api/posts/${id}`, {
     option: "upVote"
   }, { headers })
 
@@ -55,7 +55,7 @@ export async function upVotePost(id) {
 }
 
 export async function downVotePost(id) {
-  const res = await axios.post(`/api/posts/${id}`, {
+  const res = await axios.post(`localhost:3001/api/posts/${id}`, {
     option: "downVote"
   }, { headers })
 
@@ -65,7 +65,7 @@ export async function downVotePost(id) {
 
 
 export async function getAllCommentsById(id) {
-  const res = await axios.get(`/api/posts/${id}/comments`, {
+  const res = await axios.get(`localhost:3001/api/posts/${id}/comments`, {
     headers
   })
 
@@ -73,7 +73,7 @@ export async function getAllCommentsById(id) {
 }
 
 export async function deleteComment(id) {
-  const res = await axios.delete(`/api/comments/${id}`, { headers })
+  const res = await axios.delete(`localhost:3001/api/comments/${id}`, { headers })
 
   return res.data
 }
@@ -81,7 +81,7 @@ export async function deleteComment(id) {
 export async function addComment({body, author, parentId}) {
   const id = uuidV1()
   const timestamp = Date.now()
-  const res = await axios.post(`/api/comments`, {
+  const res = await axios.post(`localhost:3001/api/comments`, {
     id, timestamp, body, author, parentId
   }, { headers })
 
@@ -90,14 +90,14 @@ export async function addComment({body, author, parentId}) {
 
 export async function editComment({id, body}) {
   const timestamp = Date.now()
-  const res = await axios.put(`/api/comments/${id}`, {
+  const res = await axios.put(`localhost:3001/api/comments/${id}`, {
     body, timestamp
   }, { headers })
 
   return res.data
 }
 export async function upVoteComment(id) {
-  const res = await axios.post(`/api/comments/${id}`, {
+  const res = await axios.post(`localhost:3001/api/comments/${id}`, {
     option: "upVote"
   }, { headers })
 
@@ -105,7 +105,7 @@ export async function upVoteComment(id) {
 }
 
 export async function downVoteComment(id) {
-  const res = await axios.post(`/api/comments/${id}`, {
+  const res = await axios.post(`localhost:3001/api/comments/${id}`, {
     option: "downVote"
   }, { headers })
 
