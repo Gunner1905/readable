@@ -2,7 +2,7 @@
 
 You need to install npm to run this project.
 
-Installing Server :
+**Installing Server :**
 
 cd api-server
 
@@ -10,7 +10,7 @@ npm install
 
 node server
 
-Installing Client :
+**Installing Client :**
 
 cd frontend
 
