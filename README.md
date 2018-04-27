@@ -7,12 +7,13 @@ Readable is an app where users will be able to post content to predefined catego
 
 The client app is built with React and Redux.
 
-You need to install npm to run this project.
+
 
 ```
 git clone https://github.com/Gunner1905/Readable.git
 cd readable
 ```
+You need to install npm to run this project.
 
 **Installing Server :**
 
